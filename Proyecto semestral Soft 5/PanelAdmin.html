@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Coclé Tour</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/Nav/nav.css">
+    <link rel="stylesheet" href="CSS/Admin/admin.css"> </head>
+    <link rel="stylesheet" href="CSS/chatbot/disen.css">
+<body>
+  <nav id="mainNav">
+    <div class="nav-content container">
+
+        <!-- 1. Hamburguesa (izquierda) -->
+        <div class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('nav-open')">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- 2. Logo (centro) -->
+        <span class="logo">Coclé Tour</span>
+
+        <!-- 3. Menú principal (oculto en móvil) -->
+        <ul class="nav-links">
+            <!-- <li><a href="inicio.html">Inicio</a></li> -->
+            <!-- <li class="dropdown">
+                <a href="#">Destinos 🔽</a>
+                <ul class="dropdown-menu">
+                    <li><a href="valle.html">El Valle de Antón</a></li>
+                    <li><a href="santa.html">Playa Santa Clara</a></li>
+                    <li><a href="nata.html">Nata de los Caballeros</a></li>
+                </ul>
+            </li> -->
+            <!-- <li><a href="paquete.html">Paquetes</a></li> -->
+            <!-- <li><a href="nosotros.html">Sobre Nosotros</a></li> -->
+            <!-- <li><a href="formulario.html">Contacto</a></li> -->
+             <li><a href="PanelAdmin.html">Panel Admin</a></li>
+             <!-- <li><a href="juego.html">Juego Coclé Tour</a></li> -->
+        </ul>
+
+        <!-- 4. Iconos (derecha) -->
+        <ul class="nav-utilidades">
+            <!-- <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li> -->
+            <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+        </ul>
+
+    </div>
+</nav>
+
+    <main class="container admin-dashboard">
+        <h2>Panel de Administración de Paquetes</h2>
+        
+        <div class="header-actions">
+            <button id="logoutBtn" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+            <button id="addPackageBtn" class="btn-add"><i class="fas fa-plus"></i> Agregar Nuevo Paquete</button>
+        </div>
+
+        <section id="packageFormSection" class="form-section" style="display: none;">
+            <h3><span id="formTitle">Agregar</span> Paquete</h3>
+            <form id="packageForm">
+                <input type="hidden" id="packageId">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre del Paquete:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio (B/.):</label>
+                    <input type="number" id="precio" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Ruta de Imagen:</label>
+                    <input type="text" id="imagen" required placeholder="Ej: Recurso/valle.jpg">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-save"><i class="fas fa-save"></i> Guardar Paquete</button>
+                    <button type="button" id="cancelBtn" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="package-list-section">
+            <h3>Paquetes Actuales</h3>
+            <table id="packageTable" class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="packageTableBody">
+                    </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="JS/admin/admin.js"></script>
+
+<div id="chat-container">
+    <div id="chat-header">
+        <span class="chat-title">Asistente Virtual 💬</span>
+        <button id="chat-close-btn" class="chat-action-btn">&times;</button>
+    </div>
+    <div id="chat-body">
+        </div>
+    <div id="chat-footer">
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+        <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<button id="chat-toggle-btn" class="chat-toggle-btn"><i class="fas fa-comment-dots"></i></button>
+
+<script src="JS/chatbot/script.js"></script>
+</body>
+</html>

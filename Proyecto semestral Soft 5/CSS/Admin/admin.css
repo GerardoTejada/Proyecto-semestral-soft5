@@ -1,0 +1,188 @@
+/* ------------------------------------- */
+/* 1. Variables y Estilos Base Globales */
+/* ------------------------------------- */
+:root {
+    /* Colores para el tema turístico/naturaleza */
+    --color-principal: #28a745; /* Verde Bosque */
+    --color-secundario: #FFC107; /* Amarillo Dorado */
+    --color-fondo: #f8f9fa; /* Fondo claro */
+    --color-texto: #343a40; /* Texto oscuro */
+    --color-blanco: #ffffff;
+    --color-resaltado: #17a2b8; /* Azul Turquesa para edición */
+    --color-danger: #dc3545; /* Rojo para eliminar/logout */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+    /* Necesario para compensar la navbar fixed */
+    padding-top: 60px; 
+}
+
+h1, h2, h3 {
+    color: var(--color-principal);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* ------------------------------------- */
+/* 3. ESTILOS DEL PANEL DE ADMINISTRACIÓN (admin.css) */
+/* ------------------------------------- */
+
+.admin-dashboard {
+    /* Espacio debajo de la barra de navegación fija */
+    margin-top: 80px; 
+    padding: 20px 0;
+}
+
+.admin-dashboard h2 {
+    color: var(--color-principal);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--color-secundario);
+    padding-bottom: 10px;
+}
+
+/* ESTILOS DE LOS BOTONES DE ACCIÓN (Agregar y Cerrar Sesión) */
+.header-actions {
+    /* 🚨 Esto asegura que los botones se vean */
+    display: flex; 
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.btn-logout {
+    background-color: var(--color-danger);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-add {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Espacio para el icono dentro de los botones */
+.btn-logout i,
+.btn-add i {
+    margin-right: 8px;
+}
+
+/* SECCIÓN DEL FORMULARIO */
+.form-section {
+    background-color: #f1f8f3;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #c3e6cb;
+}
+
+.form-section h3 {
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--color-texto);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="number"], 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-actions button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-save { background-color: var(--color-principal); color: white; }
+.btn-cancel { background-color: #6c757d; color: white; }
+
+
+/* TABLA DE PAQUETES */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-blanco);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid #e9ecef;
+    padding: 12px;
+    text-align: left;
+}
+
+/* 🚨 Esto asegura que los encabezados tengan fondo y color distinto al fondo */
+.admin-table th {
+    background-color: var(--color-principal); 
+    color: white; 
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Botones dentro de la tabla */
+.btn-edit, .btn-delete {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.btn-edit i, .btn-delete i {
+    margin-right: 5px;
+}
+
+.btn-edit { 
+    background-color: var(--color-resaltado); 
+    color: white; 
+}
+.btn-delete { 
+    background-color: var(--color-danger); 
+    color: white; 
+}

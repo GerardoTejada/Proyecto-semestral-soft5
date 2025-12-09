@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/formulario/disen.css">
+    <link rel="stylesheet" href="CSS/chatbot/disen.css">
+    <link rel="stylesheet" href="CSS/Nav/nav.css">
+</head>
+<body>
+    <nav id="mainNav">
+    <div class="nav-content container">
+
+        <!-- 1. Hamburguesa (izquierda) -->
+        <div class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('nav-open')">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- 2. Logo (centro) -->
+        <span class="logo">Coclé Tour</span>
+
+        <!-- 3. Menú principal (oculto en móvil) -->
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#">Destinos 🔽</a>
+                <ul class="dropdown-menu">
+                    <li><a href="valle.html">El Valle de Antón</a></li>
+                    <li><a href="santa.html">Playa Santa Clara</a></li>
+                    <li><a href="nata.html">Nata de los Caballeros</a></li>
+                </ul>
+            </li>
+            <li><a href="paquete.html">Paquetes</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+            <li><a href="juego.html">Juego Coclé Tour</a></li>
+        </ul>
+
+        <!-- 4. Iconos (derecha) -->
+        <ul class="nav-utilidades">
+            <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+        </ul>
+
+    </div>
+</nav>
+<body>
+    
+    <main class="container">
+        
+        <header class="contacto-header">
+            <h1>🤝 Contáctanos para Planear tu Aventura</h1>
+            <p>Rellena el formulario y uno de nuestros agentes te contactará a la brevedad posible.</p>
+        </header>
+
+        <section class="formulario-seccion">
+            <form id="contactForm" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo (*)</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                    <div class="error-message" id="error-nombre"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico (*)</label>
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
+                    <div class="error-message" id="error-email"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 6999-9999">
+                    <div class="error-message" id="error-telefono"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Tu Mensaje (*)</label>
+                    <textarea id="mensaje" name="mensaje" required rows="6" placeholder="Cuéntanos qué tipo de paquete te interesa."></textarea>
+                    <div class="error-message" id="error-mensaje"></div>
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                </button>
+            </form>
+            
+            <div id="successMessage" class="success-message" style="display: none;">
+                ¡Gracias! Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.
+            </div>
+            
+        </section>
+    </main>
+    
+    <script src="JS/formulario/script.js"></script> </body>
+    
+    <div id="chat-container">
+    <div id="chat-header">
+        <span class="chat-title">Asistente Virtual 💬</span>
+        <button id="chat-close-btn" class="chat-action-btn">&times;</button>
+    </div>
+    <div id="chat-body">
+        </div>
+    <div id="chat-footer">
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+        <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<button id="chat-toggle-btn" class="chat-toggle-btn"><i class="fas fa-comment-dots"></i></button>
+
+<script src="JS/chatbot/script.js"></script>
+</body>
+</html>

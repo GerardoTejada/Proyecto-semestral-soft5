@@ -1,0 +1,176 @@
+/* ------------------------------------- */
+/* NAVBAR UNIVERSAL PARA TODAS LAS PÁGINAS (FUSIONADO) */
+/* ------------------------------------- */
+
+nav {
+    /* Usando variables del archivo base para mayor flexibilidad */
+    background-color: var(--color-principal, #28a745); 
+    color: var(--color-blanco, #fff);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content {
+    display: flex;
+    /* Ajustado para usar padding y justify-content: space-between */
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 5%; /* Mejor que width: 90% y margin: auto */
+    /* Se elimina 'width: 90%' y 'margin: auto' a favor de padding para el nav-content */
+}
+
+/* ---------------------- */
+/* 1. Menú Hamburguesa    */
+/* ---------------------- */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px; /* Ajustado a 30px para coincidir con el diseño del móvil robusto */
+    height: 25px; /* Ajustado a 25px */
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-blanco, #fff);
+    transition: all 0.3s ease-in-out;
+}
+
+/* ---------------------- */
+/* 2. Logo Centrado       */
+/* ---------------------- */
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    /* Estilos del logo tomados del archivo con variables */
+    font-size: 1.5em; 
+    font-weight: 700;
+    color: var(--color-blanco, #fff);
+    /* El margin: 0 auto; original se elimina aquí para modo escritorio 
+       porque space-between ya lo posiciona. Se mantiene en la media query. */
+}
+
+/* ---------------------- */
+/* 3. Menú Principal      */
+/* ---------------------- */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    /* Se usa margin-left en <li> para control preciso en lugar de gap en flex */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 25px; /* Separación entre ítems */
+}
+
+.nav-links a {
+    color: var(--color-blanco, #fff);
+    padding: 15px 0;
+    display: block;
+    text-decoration: none;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--color-blanco, #fff);
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: var(--color-texto, #333);
+    padding: 12px 16px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #eee;
+}
+
+/* ---------------------- */
+/* 4. Iconos (Derecha)    */
+/* ---------------------- */
+
+.nav-utilidades {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-utilidades a {
+    color: var(--color-blanco, #fff);
+    font-size: 1.3em;
+}
+
+/* ------------------------------------- */
+/* 5. MODO MÓVIL (Reglas robustas) */
+/* ------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .logo {
+        /* Reestablece el centrado del logo en móvil */
+        margin: 0 auto; 
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-principal, #28a745);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        padding: 0; /* Asegura que no haya padding extra en la lista */
+    }
+
+    .nav-links li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a {
+        padding: 15px 25px;
+    }
+
+    .nav-open .nav-links {
+        display: flex;
+    }
+
+    /* Regla para mover los iconos a la derecha SIEMPRE en móvil, 
+       ajustada para funcionar con el logo centrado */
+    .nav-utilidades {
+        /* Si se requiere que esté al final, margin-left: auto; */
+        margin-left: auto; 
+        display: flex;
+        align-items: center;
+        /* Asegura que haya algo de espacio en el borde */
+        padding-right: 5%; 
+    }
+}

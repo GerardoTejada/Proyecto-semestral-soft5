@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Interactivo - Coclé Game</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/juego/disen.css">
+    <link rel="stylesheet" href="CSS/Nav/nav.css">
+    <link rel="stylesheet" href="CSS/chatbot/disen.css">
+</head>
+<body>
+        <nav id="mainNav">
+    <div class="nav-content container">
+
+        <!-- 1. Hamburguesa (izquierda) -->
+        <div class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('nav-open')">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- 2. Logo (centro) -->
+        <span class="logo">Coclé Tour</span>
+
+        <!-- 3. Menú principal (oculto en móvil) -->
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#">Destinos 🔽</a>
+                <ul class="dropdown-menu">
+                    <li><a href="valle.html">El Valle de Antón</a></li>
+                    <li><a href="santa.html">Playa Santa Clara</a></li>
+                    <li><a href="nata.html">Nata de los Caballeros</a></li>
+                </ul>
+            </li>
+            <li><a href="paquete.html">Paquetes</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+            <li><a href="juego.html">Juego Coclé Tour</a></li>
+        </ul>
+
+        <!-- 4. Iconos (derecha) -->
+        <ul class="nav-utilidades">
+            <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+    <header class="parallax-section">
+        <h1>¡El Reto de Coclé!</h1>
+        <p>Demuestra tu agilidad en este juego interactivo. Desplázate hacia abajo para empezar.</p>
+        <div class="scroll-down-indicator">⬇️</div>
+    </header>
+    
+    <main class="game-section">
+        <div class="container">
+            <h2>🕹️ Capturador de Clics</h2>
+
+            <div class="marcadores-grid">
+                <div class="marcador">
+                    <h4>Puntaje (Clics)</h4>
+                    <span id="score" class="score-value">0</span>
+                </div>
+                <div class="marcador">
+                    <h4>Tiempo Restante</h4>
+                    <span id="timer" class="score-value">30s</span>
+                </div>
+            </div>
+
+            <div id="game-area" class="game-area">
+                <p id="game-message">Presiona **Iniciar Juego** para comenzar el reto.</p>
+                <button id="start-button" class="btn-start">Iniciar Juego</button>
+                
+                </div>
+
+            <div id="result-modal" class="modal">
+                <div class="modal-content">
+                    <h3>¡Juego Terminado!</h3>
+                    <p>Tu puntaje final es: <span id="final-score">0</span> clics.</p>
+                    <button class="btn-close-modal" onclick="document.getElementById('result-modal').style.display = 'none';">Cerrar</button>
+                </div>
+            </div>
+
+            <button id="reset-button" class="btn-reset" disabled>Reiniciar Juego</button>
+
+        </div>
+    </main>
+
+    <script src="Js/juego/script.js"></script>
+
+    <div id="chat-container">
+    <div id="chat-header">
+        <span class="chat-title">Asistente Virtual 💬</span>
+        <button id="chat-close-btn" class="chat-action-btn">&times;</button>
+    </div>
+    <div id="chat-body">
+        </div>
+    <div id="chat-footer">
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+        <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<button id="chat-toggle-btn" class="chat-toggle-btn"><i class="fas fa-comment-dots"></i></button>
+
+<script src="JS/chatbot/script.js"></script>
+</body>
+</html>

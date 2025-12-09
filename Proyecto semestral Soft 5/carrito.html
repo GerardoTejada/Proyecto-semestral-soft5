@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito - Coclé Tour</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="CSS/Nav/nav.css">
+    <link rel="stylesheet" href="CSS/paquete/paquete.css"> 
+    <link rel="stylesheet" href="CSS/chatbot/disen.css">
+    
+</head>
+<body>
+    <nav id="mainNav">
+        <div class="nav-content container">
+            <div class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('nav-open')">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <span class="logo">Coclé Tour</span>
+            <ul class="nav-links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Destinos 🔽</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="valle.html">El Valle de Antón</a></li>
+                        <li><a href="santa.html">Playa Santa Clara</a></li>
+                        <li><a href="nata.html">Nata de los Caballeros</a></li>
+                    </ul>
+                </li>
+                <li><a href="paquete.html">Paquetes</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="formulario.html">Contacto</a></li>
+                <li><a href="juego.html">Juego Coclé Tour</a></li>
+            </ul>
+            <ul class="nav-utilidades">
+                <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li> 
+                <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 80px;">
+        <h2>🛒 Resumen de tu Carrito de Compras</h2>
+        
+        <section id="carrito-seccion" class="carrito-container">
+            <table id="carrito-tabla">
+                <thead>
+                    <tr>
+                        <th>Paquete</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Total Item</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="carrito-items">
+                    </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold;">Subtotal:</td>
+                        <td id="subtotal" colspan="2" class="total-col">B/. 0.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold;">ITBMS (7%):</td>
+                        <td id="impuestos" colspan="2" class="total-col">B/. 0.00</td>
+                    </tr>
+                    <tr style="background-color: #f0f0f0;">
+                        <td colspan="3" style="text-align: right; font-weight: bold; font-size: 1.2em;">TOTAL A PAGAR:</td>
+                        <td id="total-final" colspan="2" style="font-weight: bold; font-size: 1.2em; color: var(--color-danger);">B/. 0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="carrito-acciones" style="justify-content: space-between; margin-top: 25px;">
+                <button id="clear-cart-btn" class="btn-cancel" disabled><i class="fas fa-trash-alt"></i> Vaciar Carrito</button>
+                <button id="checkout-btn" class="btn-principal" disabled><i class="fas fa-money-check-alt"></i> Finalizar Compra</button>
+            </div>
+            
+        </section>
+        
+    </main>
+    
+    <div id="chat-container">
+        </div>
+    <button id="chat-toggle-btn" class="chat-toggle-btn"><i class="fas fa-comment-dots"></i></button>
+
+    <script src="JS/paquete/script.js"></script>
+    <script src="JS/chatbot/script.js"></script>
+</body>
+</html>

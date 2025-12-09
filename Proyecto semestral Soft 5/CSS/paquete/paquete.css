@@ -1,0 +1,306 @@
+/* ------------------------------------- */
+/* 1. Estilos Base y Tipografía */
+/* ------------------------------------- */
+
+/* Aseguramos que el main content inicie después del nav fijo */
+body {
+    padding-top: 60px; /* Ya está en tu CSS, pero lo reconfirmo para el nav fijo */
+}
+
+/* Estilo para el título principal de la página */
+.container h2 {
+    color: var(--color-principal); /* Verde Bosque */
+    border-bottom: 3px solid var(--color-secundario); /* Amarillo/Oro */
+    padding-bottom: 10px;
+    margin: 40px auto 30px auto;
+    text-align: center;
+    font-size: 2.5em;
+    max-width: 800px;
+}
+
+/* ------------------------------------- */
+/* 2. Diseño de Paquetes Turísticos */
+/* ------------------------------------- */
+
+/* Grid para los paquetes (Escritorio) */
+.paquetes-grid {
+    display: grid;
+    /* Adapta a 3 columnas en escritorio, mínimo 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.paquete-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--color-blanco);
+    display: flex;
+    flex-direction: column;
+}
+
+.paquete-card:hover {
+    transform: translateY(-8px); /* Elevación más notable al hacer hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.paquete-card img {
+    width: 100%;
+    height: 220px; /* Altura de imagen uniforme */
+    object-fit: cover;
+}
+
+.paquete-card h3 {
+    color: var(--color-principal); /* Título en Verde Bosque */
+    padding: 15px 15px 5px 15px;
+    font-size: 1.5em;
+    font-family: 'Playfair Display', serif; /* Usamos la tipografía del encabezado */
+}
+
+.paquete-card p {
+    padding: 0 15px 10px 15px;
+    flex-grow: 1; /* Para igualar la altura de las tarjetas */
+    font-size: 0.9em;
+    color: #6c757d; /* Gris más suave para la descripción */
+}
+
+.paquete-card .precio {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-resaltado); /* Turquesa para el precio */
+    padding: 0 15px 15px 15px;
+}
+/* Añade esto a tu CSS/paquete/paquete.css o un archivo CSS específico para la tabla si lo creas */
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn-quantity {
+    background-color: #f8f9fa !important;
+    border: 1px solid #ccc !important;
+    padding: 3px 8px !important;
+    font-size: 0.9em !important;
+    border-radius: 4px !important;
+}
+
+.btn-delete-item {
+    background-color: var(--color-danger);
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilo para la columna de totales en el footer */
+.total-col {
+    width: 120px; /* Ancho fijo para alinear */
+    text-align: right !important;
+}
+
+/* Botón de Compra */
+.btn-comprar {
+    background-color: var(--color-secundario); /* Amarillo/Oro */
+    color: var(--color-texto);
+    font-weight: 700;
+    border: none;
+    padding: 15px; /* Más padding para un botón más grande */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0 0 10px 10px; /* Mismo radio que la tarjeta */
+}
+
+.btn-comprar i {
+    margin-right: 5px;
+}
+
+.btn-comprar:hover {
+    background-color: var(--color-principal); /* Cambia a Verde Bosque al hover */
+    color: var(--color-blanco);
+}
+
+/* ------------------------------------- */
+/* 3. Diseño del Carrito de Compras */
+/* ------------------------------------- */
+
+#carrito-seccion {
+    margin: 50px 0;
+    padding: 40px;
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#carrito-seccion h3 {
+    color: var(--color-principal);
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--color-secundario);
+    padding-bottom: 15px;
+    font-size: 1.8em;
+}
+
+#carrito-tabla {
+    width: 100%;
+    border-collapse: separate; /* Para usar border-radius en las celdas */
+    border-spacing: 0;
+    text-align: left;
+}
+
+#carrito-tabla thead {
+    background-color: var(--color-principal); /* Cabecera con color principal */
+    color: var(--color-blanco);
+}
+
+#carrito-tabla th,
+#carrito-tabla td {
+    padding: 12px 15px;
+    /* Eliminamos el borde de las celdas individuales para que se vea más limpio */
+}
+
+/* Borde sutil para separar filas */
+#carrito-tabla tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Estilo para la fila vacía */
+#carrito-vacio-msg td {
+    background-color: #f4f4f4;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Pie de tabla para el total */
+#carrito-tabla tfoot td {
+    background-color: #f1f8f3; /* Fondo muy claro para el total */
+    border-top: 3px solid var(--color-secundario);
+    font-size: 1.3em;
+    color: var(--color-texto);
+}
+
+#carrito-total {
+    color: var(--color-principal); /* Color de texto del total */
+}
+
+/* Botones y Inputs dentro de la tabla */
+.cantidad-input {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.cantidad-input:focus {
+    border-color: var(--color-principal);
+    outline: none;
+}
+
+.btn-quitar {
+    background: none;
+    border: none;
+    color: #dc3545; /* Rojo para eliminar */
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: color 0.2s;
+    padding: 5px;
+}
+
+.btn-quitar:hover {
+    color: #a71d2a;
+}
+
+/* Botón Finalizar Compra */
+#btn-finalizar-compra {
+    /* Utiliza los estilos de .modal-button de tu CSS base */
+    font-size: 1.1em;
+    padding: 15px 30px;
+    background-color: var(--color-resaltado); /* Usa Turquesa para destacar la acción final */
+}
+
+#btn-finalizar-compra:hover {
+    background-color: #117a8b;
+}
+
+/* Deshabilitado */
+#btn-finalizar-compra:disabled {
+    background-color: #adb5bd; 
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* ------------------------------------- */
+/* 4. Diseño Adaptable (Móvil) */
+/* ------------------------------------- */
+
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 2em;
+        margin-top: 20px;
+    }
+    
+    /* La tabla se convierte a formato de lista para mejor lectura */
+    #carrito-tabla, #carrito-tabla tbody, #carrito-tabla td, #carrito-tabla th, #carrito-tabla tr {
+        display: block;
+        width: 100%;
+    }
+
+    #carrito-tabla thead {
+        display: none; /* Ocultar encabezados originales */
+    }
+
+    #carrito-tabla tr {
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+
+    #carrito-tabla td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    
+    /* Etiqueta para cada celda en móvil */
+    #carrito-tabla td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: var(--color-principal);
+        text-align: left;
+    }
+    
+    #carrito-tabla tfoot td {
+        text-align: left !important;
+        padding: 15px;
+        width: 100%;
+        display: block;
+    }
+    
+    .cantidad-input {
+        width: 100%; /* El input de cantidad ocupa todo el ancho de su columna */
+        max-width: 80px;
+    }
+    
+    #carrito-seccion {
+        padding: 20px;
+    }
+    
+    /* El botón Finalizar Compra ocupa todo el ancho */
+    #btn-finalizar-compra {
+        width: 100%;
+        padding: 12px;
+    }
+}

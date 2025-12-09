@@ -1,0 +1,89 @@
+/* ------------------------------------- */
+/* ESTILOS GLOBALES DE PÁGINA DE LOGIN */
+/* ------------------------------------- */
+
+body {
+    /* Establece la imagen de fondo para toda la ventana */
+    background: url('../../Recurso/foto-panoramica.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Asegúrate de que el body no tenga un color de fondo fijo aquí si no quieres verlo */
+    background-color: var(--color-fondo, #a634ae00); 
+    height: 100vh; /* Ocupa el 100% de la altura de la vista */
+    display: flex;
+    justify-content: center; /* Centrado horizontal del contenido */
+    align-items: center; /* Centrado vertical del contenido */
+    padding-top: 0; /* Desactiva el padding del nav para centrar correctamente */
+}
+
+.container.login-container {
+    /* 🚨 Panel Transparente y Centrado 🚨 */
+    
+    /* Centrado: El body con flexbox ya lo centra, solo necesitamos margenes auto. */
+    margin: auto; /* Centrado dentro del contenedor del body (si es necesario) */
+    
+    max-width: 400px;
+    padding: 30px;
+    
+    /* Fondo Semi-transparente: Usamos RGBA para control de opacidad */
+    background-color: rgba(255, 255, 255, 0.252); /* Blanco con 75% de opacidad */
+    
+    border-radius: 12px; /* Un poco más de redondeo */
+    /* Sombra de caja más suave para un efecto moderno */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    
+    text-align: center;
+    /* Para que el contenedor no tenga el margen superior (margin-top: 80px) anterior */
+    margin-top: 0; 
+}
+
+/* ------------------------------------- */
+/* ESTILOS DE ELEMENTOS DEL FORMULARIO */
+/* ------------------------------------- */
+
+.login-container h2 {
+    color: var(--color-principal, #28a745);
+    margin-bottom: 20px;
+    /* Para que el texto sea visible sobre el fondo semi-transparente */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    /* Borde sólido y color neutral */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Fondo de input ligeramente transparente */
+    background-color: rgba(255, 255, 255, 0.9); 
+}
+
+.btn-login {
+    background-color: var(--color-resaltado, #17a2b8);
+    color: var(--color-blanco, #ffffff);
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #117a8b;
+}
+
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+}

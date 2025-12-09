@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquetes turisticos - Cocle tour</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Nav/nav.css">
+    <link rel="stylesheet" href="CSS/paquete/paquete.css">
+    <link rel="stylesheet" href="CSS/chatbot/disen.css">
+    
+</head>
+<body>
+    <nav id="mainNav">
+    <div class="nav-content container">
+
+        <!-- 1. Hamburguesa (izquierda) -->
+        <div class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('nav-open')">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- 2. Logo (centro) -->
+        <span class="logo">Coclé Tour</span>
+
+        <!-- 3. Menú principal (oculto en móvil) -->
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#">Destinos 🔽</a>
+                <ul class="dropdown-menu">
+                    <li><a href="valle.html">El Valle de Antón</a></li>
+                    <li><a href="santa.html">Playa Santa Clara</a></li>
+                    <li><a href="nata.html">Nata de los Caballeros</a></li>
+                </ul>
+            </li>
+            <li><a href="paquete.html">Paquetes</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+             <li><a href="juego.html">Juego Coclé Tour</a></li>
+        </ul>
+
+        <!-- 4. Iconos (derecha) -->
+        <ul class="nav-utilidades">
+            <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="login.html"><i class="fas fa-user"></i></a></li>
+        </ul>
+
+    </div>
+</nav>
+    
+<div class="container">
+    <h2>Paquetes Turísticos de Coclé</h2>
+    
+    <section id="paquetes-container" class="paquetes-grid">
+        <div class="paquete-card" data-id="1" data-nombre="Valle de Antón Aventura" data-precio="120.00">
+            <img src="Recurso/valle.jpg" alt="Valle de Antón">
+            <h3>Valle de Antón Aventura</h3>
+            <p>Incluye: Hospedaje 2 días/1 noche, ruta senderismo, visita a la Piedra Pintada.</p>
+            <div class="precio">B/. 120.00</div>
+            <button class="btn-comprar"><i class="fas fa-cart-plus"></i> Agregar al Carrito</button>
+        </div>
+
+        <div class="paquete-card" data-id="2" data-nombre="Escapada a Santa Clara" data-precio="95.50">
+            <img src="Recurso/playa-santa-clara.jpg" alt="Playa Santa Clara">
+            <h3>Escapada a Santa Clara</h3>
+            <p>Incluye: Día de playa con sombrilla y sillas, almuerzo con mariscos, transporte.</p>
+            <div class="precio">B/. 95.50</div>
+            <button class="btn-comprar"><i class="fas fa-cart-plus"></i> Agregar al Carrito</button>
+        </div>
+
+        <div class="paquete-card" data-id="3" data-nombre="Historia y Cultura Natá" data-precio="75.00">
+            <img src="Recurso/nata inglesia.jpg" alt="Natá de los Caballeros">
+            <h3>Historia y Cultura Natá</h3>
+            <p>Incluye: Tour guiado por la iglesia, visita a monumentos históricos, refrigerio.</p>
+            <div class="precio">B/. 75.00</div>
+            <button class="btn-comprar"><i class="fas fa-cart-plus"></i> Agregar al Carrito</button>
+        </div>
+    </section>
+
+    <hr>
+    
+    <section id="carrito-seccion">
+        <h3><i class="fas fa-shopping-cart"></i> Tu Carrito de Compras</h3>
+        
+        <table id="carrito-tabla">
+            <thead>
+                <tr>
+                    <th>Paquete</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Total Item</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="carrito-items">
+                <tr id="carrito-vacio-msg">
+                    <td colspan="5" style="text-align: center; color: #6c757d;">El carrito está vacío. ¡Agrega un paquete!</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="text-align: right; font-weight: bold;">TOTAL:</td>
+                    <td id="carrito-total" colspan="2" style="font-weight: bold;">B/. 0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div style="text-align: right; margin-top: 20px;">
+            <button id="btn-finalizar-compra" class="modal-button" disabled>Finalizar Compra</button>
+        </div>
+    </section>
+</div>
+
+<script src="Js/paquete/script.js"></script>
+
+</main>
+
+<div id="chat-container">
+    <div id="chat-header">
+        <span class="chat-title">Asistente Virtual 💬</span>
+        <button id="chat-close-btn" class="chat-action-btn">&times;</button>
+    </div>
+    <div id="chat-body">
+        </div>
+    <div id="chat-footer">
+        <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+        <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<button id="chat-toggle-btn" class="chat-toggle-btn"><i class="fas fa-comment-dots"></i></button>
+
+<script src="JS/chatbot/script.js"></script>
+</body>
+</html>
